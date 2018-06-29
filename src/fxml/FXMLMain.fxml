@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXMasonryPane?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="mainPane" prefHeight="600.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FXMLMainController">
+   <children>
+      <JFXTabPane fx:id="mainTabPane" prefHeight="596.0" prefWidth="844.0">
+         <tabs>
+            <Tab fx:id="studentsTab" text="Students">
+               <content>
+                  <ScrollPane fx:id="studentsScrollPane" fitToWidth="true" hbarPolicy="NEVER">
+                     <content>
+                        <JFXMasonryPane fx:id="studentsMasonry" prefHeight="555.0" prefWidth="766.0" />
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab fx:id="teachersTab" text="Professors">
+               <content>
+                  <ScrollPane fx:id="professorsScrollPane" fitToWidth="true" hbarPolicy="NEVER">
+                     <content>
+                        <JFXMasonryPane fx:id="professorsMasonry" prefHeight="555.0" prefWidth="766.0" />
+                     </content>
+                  </ScrollPane>
+               </content></Tab>
+            <Tab fx:id="timetableTab" text="Time Table">
+               <content>
+                  <JFXTreeTableView fx:id="timeTableView" />
+               </content></Tab>
+         </tabs>
+      </JFXTabPane>
+      <GridPane fx:id="anchorPane" pickOnBounds="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="859.0" minWidth="10.0" prefWidth="837.0" />
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="74.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="536.0" minHeight="10.0" prefHeight="524.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="76.0" valignment="TOP" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <JFXButton fx:id="plusButton" alignment="CENTER" buttonType="RAISED" ellipsisString="" onAction="#plusAction" styleClass="plusButton" stylesheets="@../timetableapp/style.css" text="+" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </children>
+</StackPane>
